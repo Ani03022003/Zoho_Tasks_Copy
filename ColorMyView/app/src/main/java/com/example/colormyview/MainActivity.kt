@@ -12,8 +12,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.databinding.DataBindingComponent
-//import com.example.colormyview.databinding.ActivityMainBinding
 import androidx.databinding.DataBindingUtil
 import com.example.colormyview.ui.theme.ColorMyViewTheme
 
@@ -22,6 +20,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        setContentView(R.layout.activity_main)
         //binding = DataBindingUtil.setContentView(this,R.layout.activity_main)
     }
 }
