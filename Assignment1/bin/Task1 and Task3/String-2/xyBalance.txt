@@ -1,0 +1,14 @@
+public boolean xyBalance(String str) {
+  int j=0;
+  for(int i=0;i<str.length();i++){
+    if(str.charAt(i)=='y'){
+      j=i;
+    }
+  }
+  for(int i=0;i<str.length();i++){
+    if(str.charAt(i)=='x' && i>=j){
+      return false;
+    }
+  }
+  return true;
+}

@@ -1,0 +1,20 @@
+public int sumNumbers(String str) {
+  int sum=0;
+  String num="";
+  for(int i=0;i<str.length();i++){
+    if(Character.isDigit(str.charAt(i))){
+      num+=String.valueOf(str.charAt(i));
+    }
+    else{
+      if(!num.isEmpty()){
+        int n=Integer.parseInt(num);
+        sum+=n;
+        num="";
+      }
+    }
+  }
+  if(!num.isEmpty()){
+      sum+=Integer.parseInt(num);
+  }
+  return sum;
+}

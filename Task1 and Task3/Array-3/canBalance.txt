@@ -1,0 +1,23 @@
+public boolean canBalance(int[] nums) {
+  int end=nums.length-2;
+  int front=0;
+  int back=0;
+  if(nums.length==2){
+    if(nums[0]==nums[1])
+      return true;
+  }
+  while(end>0){
+    front=0;
+    back=0;
+    for(int i=0;i<=end;i++){
+      front+=nums[i];
+    }
+    for(int i=end+1;i<nums.length;i++){
+      back+=nums[i];
+    }
+    end--;
+    if(front==back)
+      return true;
+  }
+  return false;
+}

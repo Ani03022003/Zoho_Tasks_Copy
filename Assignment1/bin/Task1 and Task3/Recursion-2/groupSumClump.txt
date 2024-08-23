@@ -1,0 +1,16 @@
+public boolean groupSumClump(int start, int[] nums, int target) {
+  if(start>=nums.length)
+    return target==0;
+  int sum=0;
+  int count=0;
+  int value=nums[start];
+  while(start+count<nums.length && nums[start+count]==value){
+    sum+=nums[start+count];
+    count++;
+  }
+  if(groupSumClump(start+count,nums,target-sum))
+    return true;
+  if(groupSumClump(start+count,nums,target))
+    return true;
+  return false;
+}

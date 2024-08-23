@@ -1,0 +1,9 @@
+public String startWord(String str, String word) {
+  if(str.length()<word.length())
+    return "";
+  String front=str.substring(0,word.length());
+  if(front.substring(1).equals(word.substring(1)))
+    return front;
+  else
+    return "";
+}

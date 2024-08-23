@@ -1,0 +1,16 @@
+public String mixString(String a, String b) {
+  int i=0,j=0;
+  int aLen=a.length();
+  int bLen=b.length();
+  String result="";
+  while(i<aLen && j<bLen){
+    result+=String.valueOf(a.charAt(i++))+String.valueOf(b.charAt(j++));
+  }
+  while(i<aLen){
+    result+=String.valueOf(a.charAt(i++));
+  }
+  while(j<bLen){
+    result+=String.valueOf(b.charAt(j++));
+  }
+  return result;
+}

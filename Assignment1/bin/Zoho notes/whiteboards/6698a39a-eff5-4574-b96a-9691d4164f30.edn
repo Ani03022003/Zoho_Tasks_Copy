@@ -1,0 +1,64 @@
+{:blocks (
+{:block/created-at 1721279600079
+:block/properties 
+{:ls-type :whiteboard-shape
+:logseq.tldraw.shape 
+{:index 0
+:scale [1 1]
+:type "image"
+:assetId "f5f0df90-44c3-11ef-bd13-0d769fbf5354"
+:size [544.5 354]
+:opacity 1
+:id "f5f26630-44c3-11ef-bd13-0d769fbf5354"
+:isAspectRatioLocked true
+:isLocked false
+:objectFit "fill"
+:point [32 32]
+:parentId "6698a39a-eff5-4574-b96a-9691d4164f30"
+:nonce 1721279390914
+:clipping 0}}
+:block/updated-at 1721279600079} 
+{:block/created-at 1721279603715
+:block/properties 
+{:ls-type :whiteboard-shape
+:logseq.tldraw.shape 
+{:index 1
+:scale [1 1]
+:type "image"
+:assetId "740a3700-44c4-11ef-bd13-0d769fbf5354"
+:size [547.5 354]
+:opacity 1
+:id "740b6f80-44c4-11ef-bd13-0d769fbf5354"
+:isAspectRatioLocked true
+:isLocked false
+:objectFit "fill"
+:point [600 32]
+:parentId "6698a39a-eff5-4574-b96a-9691d4164f30"
+:nonce 1721279602350
+:clipping 0}}
+:block/updated-at 1721279603715})
+:pages (
+{:block/uuid #uuid "6698a39a-eff5-4574-b96a-9691d4164f30"
+:block/properties 
+{:ls-type :whiteboard-page
+:logseq.tldraw.page 
+{:id "6698a39a-eff5-4574-b96a-9691d4164f30"
+:name "6698a39a-eff5-4574-b96a-9691d4164f30"
+:bindings 
+{}
+:nonce 1
+:assets [
+{:id "f5f0df90-44c3-11ef-bd13-0d769fbf5354"
+:type "image"
+:src "../assets/image_1721279390611_0.png"
+:size [1089 708]} 
+{:id "740a3700-44c4-11ef-bd13-0d769fbf5354"
+:type "image"
+:src "../assets/image_1721279602111_0.png"
+:size [1095 708]}]
+:shapes-index ("f5f26630-44c3-11ef-bd13-0d769fbf5354" "740b6f80-44c4-11ef-bd13-0d769fbf5354")}}
+:block/updated-at 1721279603715
+:block/created-at 1721279386658
+:block/type "whiteboard"
+:block/name "6698a39a-eff5-4574-b96a-9691d4164f30"
+:block/original-name "6698a39a-eff5-4574-b96a-9691d4164f30"})}

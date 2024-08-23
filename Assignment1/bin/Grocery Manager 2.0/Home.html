@@ -1,0 +1,16 @@
+<script type="module">
+  import { reactive } from 'https://unpkg.com/vue@3.3.9/dist/vue.esm-browser.js'
+  export default {
+    setup() {
+      const counter = reactive({
+        count: 0
+      })
+
+      return counter
+    }
+  }
+</script>
+
+<div id="app">
+  <h1>{{counter.count}}</h1>
+</div>

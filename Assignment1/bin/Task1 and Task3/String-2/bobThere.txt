@@ -1,0 +1,9 @@
+public boolean bobThere(String str) {
+  for(int i=0;i<str.length()-2;i++){
+    String bob=str.substring(i,3+i);
+    if(bob.charAt(0)=='b' && bob.charAt(2)=='b'){
+      return true;
+    }
+  }
+  return false;
+}

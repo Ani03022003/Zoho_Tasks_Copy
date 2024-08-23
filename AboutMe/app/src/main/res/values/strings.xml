@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">AboutMe</string>
+    <string name="name_text">Anish</string>
+    <string name="yellow_star">YELLOW_STAR</string>
+    <string name="my_bio">Welcome to my world! My name is [Your Name], and I’m passionate about [Your Passion or Profession]. With a love for creativity and technology, I have spent the past [X years] honing my skills in [Your Field or Expertise], striving to blend innovation with practical solutions that make life easier and more enjoyable.
+        \n\nFrom a young age, I was fascinated by the way things work, which led me to pursue a career in [Your Profession, e.g., software development, design, engineering, etc.]. My journey has been fueled by curiosity and a desire to continuously learn and grow. Over the years, I have had the opportunity to work on a wide variety of projects, from small personal ventures to large-scale professional assignments. Each experience has taught me something new, whether it’s about the latest technology, creative problem-solving, or simply the importance of perseverance.
+        \n\nIn addition to my professional pursuits, I am an avid [Your Hobbies, e.g., traveler, reader, photographer, etc.]. These interests keep me grounded and inspire my work. Whether it’s capturing the perfect shot on a weekend hike or getting lost in a good book, I find joy in the little things that life has to offer.
+        \n\nOne of my greatest joys is sharing knowledge and helping others. This has led me to [Your Teaching/Sharing Experience, e.g., mentoring aspiring developers, conducting workshops, writing blogs, etc.]. I believe that knowledge is most powerful when shared, and I am always eager to connect with others who share my passion for [Your Field or Passion].
+        \n\nLooking ahead, I am excited about the endless possibilities that lie in the future. Technology is constantly evolving, and with it, the potential to create impactful solutions grows. My goal is to continue learning, adapting, and contributing to the world in meaningful ways, both through my professional work and personal endeavors.
+        \n\nThank you for taking the time to learn a little bit about me. I am always open to new opportunities and collaborations, so feel free to reach out if you’d like to connect or work together on something exciting.</string>
+    <string name="what_is_your_nickname">What is your nickname?</string>
+    <string name="done">Done</string>
+
+</resources>

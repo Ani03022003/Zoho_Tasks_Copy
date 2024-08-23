@@ -1,0 +1,10 @@
+public String repeatFront(String str, int n) {
+  if(str.length()==0){
+    return "";
+  }
+  String result="";
+  for(int i=1;i<=n;i++){
+    result+=str.substring(0,n+1-i);
+  }
+  return result;
+}

@@ -1,0 +1,28 @@
+class PatternGenerator {
+
+    static List<String> printToList(char a) {
+            // throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+            List<String> pattern=new ArrayList<>();
+            for(int i=65;i<=a;i++){
+                StringBuilder str=new StringBuilder();
+                for(int j=65;j<=(2*a)-65;j++){
+                    if(i+j-65==a || j-i==a-65)
+                        str.append((char)i);
+                    else
+                        str.append(" ");
+                }
+                pattern.add(str.toString());
+            }
+            for(int i=a-1;i>=65;i--){
+                StringBuilder str=new StringBuilder();
+                for(int j=65;j<=(2*a)-65;j++){
+                    if(j-i==a-65 || i+j==a+65)
+                        str.append((char)i);
+                    else
+                        str.append(" ");
+                }
+                pattern.add(str.toString());
+            }
+            return pattern;
+        }
+    }

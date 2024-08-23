@@ -1,0 +1,14 @@
+public int[] zeroFront(int[] nums) {
+  int low=0,high=nums.length-1;
+  while(low<=high){
+    if(nums[low]==0)
+      low++;
+    else{
+      int temp=nums[low];
+      nums[low]=nums[high];
+      nums[high]=temp;
+      high--;
+    }
+  }
+  return nums;
+}

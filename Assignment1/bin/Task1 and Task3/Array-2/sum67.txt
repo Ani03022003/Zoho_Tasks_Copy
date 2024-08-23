@@ -1,0 +1,14 @@
+public int sum67(int[] nums) {
+  int sum=0,i=0;
+  boolean flag=true;
+  while(i<nums.length){
+    if(nums[i]==6)
+      flag=false;
+    if(flag)
+      sum+=nums[i];
+    if(nums[i]==7 && !flag)
+      flag=true;
+    i++;
+  }
+  return sum;
+}

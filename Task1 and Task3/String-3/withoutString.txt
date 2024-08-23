@@ -1,0 +1,11 @@
+public String withoutString(String base, String remove) {
+  String result="";
+  for(int i=0;i<base.length();i++){
+    if(i<=base.length()-remove.length() && base.substring(i,remove.length()+i).equalsIgnoreCase(remove)){
+      i+=remove.length()-1;
+      continue;
+    }
+    result+=String.valueOf(base.charAt(i));
+  }
+  return result;
+}

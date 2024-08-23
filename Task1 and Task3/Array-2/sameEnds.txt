@@ -1,0 +1,12 @@
+public boolean sameEnds(int[] nums, int len) {
+  if(len==0 || len==nums.length)
+    return true;
+  int i=0,j=nums.length-len;
+  while(i<len && j<nums.length){
+    if(nums[i]!=nums[j])
+      return false;
+    i++;
+    j++;
+  }
+  return true;
+}

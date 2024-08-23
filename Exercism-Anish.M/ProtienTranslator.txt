@@ -1,0 +1,35 @@
+import java.util.*;
+class ProteinTranslator {
+    String codonToProtien(String s){
+        if(s.equals("AUG"))
+            return "Methionine";
+        else if(s.equals("UUU")||s.equals("UUC"))
+            return "Phenylalanine";
+        else if(s.equals("UUA")||s.equals("UUG"))
+            return "Leucine";
+        else if(s.equals("UCU")||s.equals("UCC")||s.equals("UCA")||s.equals("UCG"))
+            return "Serine";
+        else if(s.equals("UAU")||s.equals("UAC"))
+            return "Tyrosine";
+        else if(s.equals("UGU")||s.equals("UGC"))
+            return "Cysteine";
+        else if(s.equals("UGG"))
+            return "Tryptophan";
+        else 
+            throw new IllegalArgumentException("Invalid codon");
+    }
+    List<String> translate(String rnaSequence) {
+        //throw new UnsupportedOperationException("Invalid codon");
+        List<String> protienSequence=new ArrayList<>();
+        if(rnaSequence.length()%3!=0 &&!(rnaSequence.contains("UAA")||rnaSequence.contains("UAG")||rnaSequence.contains("UGA")))
+            throw new IllegalArgumentException("Invalid codon");
+        for(int i=0;i<rnaSequence.length();i+=3){
+            String str=rnaSequence.substring(i,3+i);
+            if(str.equals("UAA")||str.equals("UAG")||str.equals("UGA")){
+                return protienSequence;
+            }
+            protienSequence.add(codonToProtien(str));
+        }
+        return protienSequence;
+    }
+}

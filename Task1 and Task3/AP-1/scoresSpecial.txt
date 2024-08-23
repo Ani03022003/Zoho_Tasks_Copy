@@ -1,0 +1,14 @@
+public int scoresSpecial(int[] a, int[] b) {
+  int aLarge=findLarge(a);
+  int bLarge=findLarge(b);
+  return aLarge+bLarge;
+}
+public int findLarge(int arr[]){
+  int large=0;
+  for(int i=0;i<arr.length;i++){
+    if(arr[i]>large && arr[i]%10==0){
+      large=arr[i];
+    }
+  }
+  return large;
+}

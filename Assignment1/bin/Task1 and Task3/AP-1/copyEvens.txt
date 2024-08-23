@@ -1,0 +1,13 @@
+public int[] copyEvens(int[] nums, int count) {
+  int arr[]=new int[count];
+  int i=0,k=0;
+  while(count!=0 && i<nums.length){
+    if(nums[i]%2==0){
+      arr[k]=nums[i];
+      k++;
+      count--;
+    }
+    i++;
+  }
+  return arr;
+}

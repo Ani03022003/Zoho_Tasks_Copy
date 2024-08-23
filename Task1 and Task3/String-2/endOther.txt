@@ -1,0 +1,14 @@
+public boolean endOther(String a, String b) {
+  int minLen=0;
+  if(a.length()<b.length())
+    minLen=a.length();
+  else
+    minLen=b.length();
+  a=a.toLowerCase();
+  b=b.toLowerCase();
+  for(int i=1;i<=minLen;i++){
+    if(a.charAt(a.length()-i)!=b.charAt(b.length()-i))
+      return false;
+  }
+  return true;
+}

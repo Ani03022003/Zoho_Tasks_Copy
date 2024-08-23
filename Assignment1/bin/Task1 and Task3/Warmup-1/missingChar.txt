@@ -1,0 +1,5 @@
+public String missingChar(String str, int n) {
+  StringBuilder s=new StringBuilder(str);
+  s.deleteCharAt(n);
+  return s.toString();
+}

@@ -1,0 +1,23 @@
+public String sameEnds(String str) {
+  String result="";
+  int i=0,j=0;
+  if(str.length()%2==0){
+    j=str.length()/2;
+    i=(str.length()/2)-1;
+  }
+  else{
+    j=(str.length()/2)+1;
+    i=(str.length()/2)-1;
+  }
+  while(i>=0 && j<str.length()){
+    String front=str.substring(0,i+1);
+    String back=str.substring(j,str.length());
+    if(front.equals(back)){
+      result=front;
+      break;
+    }
+    i--;
+    j++;
+  }
+  return result;
+}

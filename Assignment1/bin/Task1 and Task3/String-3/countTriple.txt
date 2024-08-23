@@ -1,0 +1,9 @@
+public int countTriple(String str) {
+  int count=0;
+  for(int i=0;i<str.length()-2;i++){
+    String s=str.substring(i,3+i);
+    if(s.charAt(0)==s.charAt(1) && s.charAt(1)==s.charAt(2))
+      count++;
+  }
+  return count;
+}

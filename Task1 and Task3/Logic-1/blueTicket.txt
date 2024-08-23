@@ -1,0 +1,11 @@
+public int blueTicket(int a, int b, int c) {
+  int A=a+b;
+  int B=b+c;
+  int C=c+a;
+  
+  if(A==10 || B==10 || C==10)
+    return 10;
+  if(A-B>=10 || A-C>=10)
+    return 5;
+  return 0;
+}

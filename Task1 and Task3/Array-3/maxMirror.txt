@@ -1,0 +1,24 @@
+public int maxMirror(int[] nums) {
+  if(nums.length==0){
+    return 0;
+  }
+  int rev[]=new int[nums.length];
+  for(int i=0;i<nums.length;i++){
+    rev[i]=nums[nums.length-1-i];
+  }
+  int dp[][]=new int[nums.length+1][nums.length+1];
+  int maxLen=0;
+  
+  for(int i=1;i<=nums.length;i++){
+    for(int j=1;j<=nums.length;j++){
+      if(nums[i-1]==rev[j-1]){
+        dp[i][j]=dp[i-1][j-1]+1;
+        maxLen=Math.max(maxLen,dp[i][j]);
+      }
+      else{
+        dp[i][j]=0;
+      }
+    }
+  }
+  return maxLen;
+}

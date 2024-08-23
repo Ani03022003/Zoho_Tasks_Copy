@@ -1,0 +1,15 @@
+public boolean equalIsNot(String str) {
+  int countIs=0;
+  int countNot=0;
+  for(int i=0;i<str.length();i++){
+    if(i<=str.length()-2 && str.substring(i,2+i).equals("is")){
+      countIs++;
+      i+=1;
+    }
+    if(i<=str.length()-3 && str.substring(i,3+i).equals("not")){
+      countNot++;
+      i+=2;
+    }
+  }
+  return countIs==countNot;
+}

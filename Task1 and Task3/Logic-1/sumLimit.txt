@@ -1,0 +1,10 @@
+public int sumLimit(int a, int b) {
+  int sum=a+b;
+  int sumDigit=String.valueOf(sum).length();
+  int aLen=String.valueOf(a).length();
+  int bLen=String.valueOf(b).length();
+
+  if(sumDigit>aLen)
+    return a;
+  return sum;
+}

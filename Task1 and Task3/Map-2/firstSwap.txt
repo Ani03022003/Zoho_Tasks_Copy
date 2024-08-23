@@ -1,0 +1,17 @@
+public String[] firstSwap(String[] strings) {
+  Map<Character, Boolean> swapped=new HashMap<>();
+  for(int i=0;i<strings.length;i++){
+    swapped.put(strings[i].charAt(0),false);
+  }
+  for(int i=0;i<strings.length-1;i++){
+    for(int j=i+1;j<strings.length;j++){
+      if(strings[i].charAt(0)==strings[j].charAt(0) && !swapped.get(strings[j].charAt(0))){
+        String temp=strings[j];
+        strings[j]=strings[i];
+        strings[i]=temp;
+        swapped.put(strings[j].charAt(0),true);
+      }
+    }
+  }
+  return strings;
+}

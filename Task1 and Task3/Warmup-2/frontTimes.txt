@@ -1,0 +1,12 @@
+public String frontTimes(String str, int n) {
+  int len=3;
+  if(len>str.length()){
+    len=str.length();
+  }
+  String front=str.substring(0,len);
+  String result="";
+  for(int i=0;i<n;i++){
+    result+=front;
+  }
+  return result;
+}

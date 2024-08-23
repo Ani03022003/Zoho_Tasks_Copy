@@ -1,0 +1,21 @@
+public String[] mergeTwo(String[] a, String[] b, int n) {
+  String arr[]=new String[n];
+  int k=0;
+  int i=0,j=0;
+  while(k<n){
+    if(a[i].compareTo(b[j])<0){
+      arr[k++]=a[i];
+      i++;
+    }
+    else if(a[i].compareTo(b[j])>0){
+      arr[k++]=b[j];
+      j++;
+    }
+    else{
+      arr[k++]=a[i];
+      i++;
+      j++;
+    }
+  }
+  return arr;
+}

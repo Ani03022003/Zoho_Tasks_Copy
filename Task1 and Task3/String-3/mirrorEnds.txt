@@ -1,0 +1,12 @@
+public String mirrorEnds(String string) {
+  int i=0,j=string.length()-1;
+  String result="";
+  while(i<string.length() && j>=0){
+    if(string.charAt(i)!=string.charAt(j))
+      break;
+    result+=String.valueOf(string.charAt(i));
+    i++;
+    j--;
+  }
+  return result;
+}

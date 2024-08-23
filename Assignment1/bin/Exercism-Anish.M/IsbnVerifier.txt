@@ -1,0 +1,28 @@
+class IsbnVerifier {
+
+    boolean isValid(String stringToVerify) {
+        //throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+        int totalValue=0;
+        String isbn=stringToVerify.replaceAll("-","");
+        if(isbn.length()!=10)
+            return false;
+        if(isbn.charAt(9)!='X' && isbn.charAt(9)>'9')
+            return false;
+        for(int i=0;i<isbn.length();i++){
+            char charAtIsbn=isbn.charAt(i);
+            int charDigit;
+            if(charAtIsbn=='X'){
+                if(i!=9)
+                    return false;
+                else
+                    charDigit=10;
+            }
+            else{
+                charDigit=Character.getNumericValue(isbn.charAt(i));
+            }
+            totalValue+=charDigit*(10-i);
+        }
+        return totalValue%11==0;
+    }
+
+}

@@ -1,0 +1,12 @@
+public int[] zeroMax(int[] nums) {
+  int maxOdd=-1;
+  for(int i=nums.length-1;i>=0;i--){
+    if(nums[i]!=0 && nums[i]%2!=0)
+      maxOdd=Math.max(maxOdd,nums[i]);
+    else if(nums[i]==0){
+      if(maxOdd!=-1)
+        nums[i]=maxOdd;
+    }
+  }
+  return nums;
+}
