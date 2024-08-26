@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="price_size">24sp</dimen>
+    <dimen name="margin_left">30dp</dimen>
+    <dimen name="margin_right">327dp</dimen>
+    <dimen name="num_margin">10dp</dimen>
+    <dimen name="margin_below">21dp</dimen>
+    <dimen name="button_left_margin">190dp</dimen>
+    <dimen name="button_right_margin">20dp</dimen>
+</resources>

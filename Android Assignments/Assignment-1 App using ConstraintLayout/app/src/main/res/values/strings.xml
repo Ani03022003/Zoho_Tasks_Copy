@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">priceCalculatorLayout</string>
+    <string name="price_text">Price:</string>
+    <string name="price_number">2.34</string>
+    <string name="price20">$20:</string>
+    <string name="price10">$10:</string>
+    <string name="price5">$5:</string>
+    <string name="price1">$1:</string>
+    <string name="price25cents">25cents:</string>
+    <string name="price10cents">10cents:</string>
+    <string name="price5cents">5cents:</string>
+    <string name="price1cents">1cents:</string>
+    <string name="no0">0</string>
+    <string name="no1">1</string>
+    <string name="no2">2</string>
+    <string name="no3">3</string>
+    <string name="no4">4</string>
+    <string name="no5">5</string>
+    <string name="no6">6</string>
+    <string name="no7">7</string>
+    <string name="no8">8</string>
+    <string name="no9">9</string>
+    <string name="clear">clear</string>
+</resources>
