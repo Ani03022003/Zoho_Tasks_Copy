@@ -17,7 +17,10 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
-    //id("androidx.navigation.safeargs")
+//    id("androidx.navigation.safeargs")
+//    alias(libs.androidx.navigation.safe.args.gradle.plugin)
+    alias(libs.plugins.safeargs)
+
 }
 
 android {
@@ -106,6 +109,7 @@ dependencies {
     implementation(libs.androidx.navigation.dynamic.features.fragment)
 
     // Testing Navigation
-    androidTestImplementation(libs.androidx.navigation.testing)
+    // androidTestImplementation(libs.androidx.navigation.testing)
+
 
 }
