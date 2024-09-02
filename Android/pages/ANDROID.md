@@ -1,2 +1,5 @@
 - [[Data Binding]]
 - [[Constraint Layout]]
+- [[Navigation]]
+- [[Activity Life Cycle]]
+-

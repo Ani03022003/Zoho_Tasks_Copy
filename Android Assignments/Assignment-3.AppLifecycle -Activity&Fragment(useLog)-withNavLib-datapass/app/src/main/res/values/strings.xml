@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">MySimpleApp</string>
+    <string name="dog_name">Enter Dog Name</string>
+    <string name="info">Type one of the names:</string>
+    <string name="dog_name1">Roshan</string>
+    <string name="dog_name2">Jackie</string>
+    <string name="dog_name3">Luffy</string>
+    <string name="dog_name4">Toshi</string>
+    <string name="done_text">Done</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="share">Share</string>
+</resources>
