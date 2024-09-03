@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "com.example.newsfeed.app-mergeDebugResources-56:/layout/actuvity_main.xml",
+        "source": "com.example.newsfeed.app-main-59:/layout/actuvity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-mergeDebugResources-56:\\layout\\actuvity_main.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-main-59:\\layout\\actuvity_main.xml"
+    }
+]

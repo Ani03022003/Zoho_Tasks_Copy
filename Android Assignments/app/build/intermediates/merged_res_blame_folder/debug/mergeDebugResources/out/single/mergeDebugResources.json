@@ -1,0 +1,130 @@
+[
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-debug-57:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-main-59:\\mipmap-mdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-debug-57:\\drawable_img_20211006_102823_collage.jpg.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-main-59:\\drawable\\img_20211006_102823_collage.jpg"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-debug-57:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-main-59:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-debug-57:\\drawable_baseline_person_off_24.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-main-59:\\drawable\\baseline_person_off_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-debug-57:\\drawable_baseline_feed_24.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-main-59:\\drawable\\baseline_feed_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-debug-57:\\drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-main-59:\\drawable-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-debug-57:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-main-59:\\mipmap-mdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-debug-57:\\drawable_baseline_menu_24.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-main-59:\\drawable\\baseline_menu_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-debug-57:\\drawable_baseline_stacked_line_chart_24.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-main-59:\\drawable\\baseline_stacked_line_chart_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-debug-57:\\drawable_baseline_connect_without_contact_24.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-main-59:\\drawable\\baseline_connect_without_contact_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-debug-57:\\drawable_baseline_mode_comment_24.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-main-59:\\drawable\\baseline_mode_comment_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-debug-57:\\drawable_baseline_keyboard_arrow_down_24.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-main-59:\\drawable\\baseline_keyboard_arrow_down_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-debug-57:\\drawable_img_20220327_104049.jpg.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-main-59:\\drawable\\img_20220327_104049.jpg"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-debug-57:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-main-59:\\xml\\data_extraction_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-debug-57:\\drawable_baseline_supervisor_account_24.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-main-59:\\drawable\\baseline_supervisor_account_24.xml"
+    },
+    {
+        "merged": "com.example.newsfeed.app-debug-57:/layout_actuvity_main.xml.flat",
+        "source": "com.example.newsfeed.app-main-59:/layout/actuvity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-debug-57:\\layout_actuvity_main.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-main-59:\\layout\\actuvity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-debug-57:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-main-59:\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-debug-57:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-main-59:\\mipmap-xhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-debug-57:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-main-59:\\mipmap-hdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-debug-57:\\drawable_baseline_message_24.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-main-59:\\drawable\\baseline_message_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-debug-57:\\drawable_baseline_thumb_up_24.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-main-59:\\drawable\\baseline_thumb_up_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-debug-57:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-main-59:\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-debug-57:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-main-59:\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-debug-57:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-main-59:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-debug-57:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-main-59:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-debug-57:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-main-59:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-debug-57:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-main-59:\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-debug-57:\\drawable_baseline_account_box_24.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-main-59:\\drawable\\baseline_account_box_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-debug-57:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-main-59:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-debug-57:\\drawable_baseline_share_24.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-main-59:\\drawable\\baseline_share_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-debug-57:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.7\\com.example.newsfeed.app-main-59:\\drawable\\ic_launcher_background.xml"
+    }
+]

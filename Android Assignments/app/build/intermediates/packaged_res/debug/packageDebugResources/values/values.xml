@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="header_color">#374AB6</color>
+    <color name="main_background">#D1D1D1</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="time_color">#AFAFAF</color>
+    <color name="white">#FFFFFFFF</color>
+    <dimen name="icon_dimen">35dp</dimen>
+    <string name="and">and</string>
+    <string name="app_name">NewsFeed</string>
+    <string name="checkin_text">CHECK IN</string>
+    <string name="content_text">Roshan, Jackie, Luffy and Toshi</string>
+    <string name="info_text">"Roshan "</string>
+    <string name="jackie">Jackie</string>
+    <string name="likes_comments_text">10 Likes and 3 Comments</string>
+    <string name="news_feed">News Feed</string>
+    <string name="others">3 others</string>
+    <string name="photo_text">PHOTO</string>
+    <string name="search_content">Search Button used to search</string>
+    <string name="status_text">STATUS</string>
+    <string name="time_active">24 minutes ago</string>
+    <string name="with">with</string>
+    <style name="Theme.NewsFeed" parent="android:Theme.Material.Light.NoActionBar"/>
+</resources>
