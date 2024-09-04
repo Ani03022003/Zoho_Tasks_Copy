@@ -17,6 +17,7 @@
 package com.example.android.guesstheword.screens.score
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -57,7 +58,7 @@ class ScoreFragment : Fragment() {
         // Get args using by navArgs property delegate
 //        val scoreFragmentArgs by navArgs<ScoreFragmentArgs>()
 //        binding.scoreText.text = scoreFragmentArgs.score.toString()
-
+        Log.i("ScoreFragment", "on scoreFragment")
         viewModelFactory = ScoreViewModelFactory(ScoreFragmentArgs.fromBundle(requireArguments()).score)
         viewModel = ViewModelProvider(this,viewModelFactory)[ScoreViewModel::class.java]
 

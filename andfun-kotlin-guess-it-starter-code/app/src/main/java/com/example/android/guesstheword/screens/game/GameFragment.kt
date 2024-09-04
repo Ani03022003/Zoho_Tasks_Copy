@@ -83,12 +83,19 @@ class GameFragment : Fragment() {
 //            binding.wordText.text = newWord.toString()
 //        })
 
+        viewModel.buzz.observe(viewLifecycleOwner, Observer{ buzzState ->
+            buzz(buzzState.Pattern)
+        })
+
         viewModel.gameFinished.observe(viewLifecycleOwner, Observer { hasFinished ->
             if(hasFinished){
                 gameFinished()
+                //viewModel.onBuzzFinished()
                 viewModel.onGameFinished()
             }
         })
+
+
 
 //        viewModel.currentTime.observe(viewLifecycleOwner, Observer { newTime ->
 //            binding.timerText.text = newTime
@@ -101,6 +108,7 @@ class GameFragment : Fragment() {
      * Called when the game is finished
      */
     private fun gameFinished() {
+        Log.i("GameFragment", "on gameFinished")
         val action = GameFragmentDirections.actionGameToScore(viewModel.score.value ?: 0)
 //        val currentScore = viewModel.score.value ?: 0
 //        action.setScore(currentScore)

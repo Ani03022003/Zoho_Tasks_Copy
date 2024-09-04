@@ -19,16 +19,14 @@ enum class BuzzType(val Pattern : LongArray){
     CORRECT(CORRECT_BUZZ_PATTERN),
     GAME_OVER(GAME_OVER_BUZZ_PATTERN),
     COUNTDOWN_PANIC(PANIC_BUZZ_PATTERN),
-    NO_BUZZ(NO_BUZZ_PATTERN)
+    NO_BUZZ(NO_BUZZ_PATTERN);
 }
 class GameViewModel : ViewModel() {
 
     companion object{
         private const val DONE = 0L
-
         private const val ONE_SEC = 1000L
-
-        private const val COUNTDOWN_TIME = 10000L
+        private const val COUNTDOWN_TIME = 60000L
     }
 
     // The current word
@@ -53,6 +51,10 @@ class GameViewModel : ViewModel() {
         time -> DateUtils.formatElapsedTime(time)
     }
 
+    private var _buzz = MutableLiveData<BuzzType>()
+    val buzz : LiveData<BuzzType>
+        get() = _buzz
+
 //    private var time = DONE
 
     private val timer : CountDownTimer
@@ -68,9 +70,13 @@ class GameViewModel : ViewModel() {
         timer = object : CountDownTimer(COUNTDOWN_TIME, ONE_SEC) {
             override fun onTick(p0: Long) {
                 _currentTime.value = (p0 / ONE_SEC)
+                if(p0 < COUNTDOWN_TIME / 4){
+                    onBuzz(BuzzType.COUNTDOWN_PANIC)
+                }
             }
             override fun onFinish() {
                 _currentTime.value = DONE
+                onBuzz(BuzzType.GAME_OVER)
                 _gameFinished.value = true
             }
         }
@@ -129,15 +135,25 @@ class GameViewModel : ViewModel() {
 
     fun onSkip() {
         _score.value = (_score.value)?.minus(1)
+        //onBuzz(BuzzType.NO_BUZZ)
         nextWord()
     }
 
     fun onCorrect() {
         _score.value = (_score.value)?.plus(1)
+        onBuzz(BuzzType.CORRECT)
         nextWord()
     }
 
     fun onGameFinished() {
         _gameFinished.value = false
     }
+
+    fun onBuzz(buzzType : BuzzType){
+        _buzz.value = buzzType
+    }
+
+//    fun onBuzzFinished(){
+//        _buzz.value = BuzzType.NO_BUZZ
+//    }
 }
