@@ -8,5 +8,5 @@
     <string name="guess_text">Enter Your Guess</string>
     <string name="hint_in_game">Make the guess</string>
     <string name="guess_left">Guess Left: %d</string>
-    <string name="in_game_button_text" >Is It Correct</string>
+    <string name="in_game_button_text">Is It Correct</string>
 </resources>

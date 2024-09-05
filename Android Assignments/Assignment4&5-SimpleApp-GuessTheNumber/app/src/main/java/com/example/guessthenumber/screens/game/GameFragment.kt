@@ -11,8 +11,11 @@ import com.example.guessthenumber.R
 import com.example.guessthenumber.databinding.GameFragmentBinding
 
 class GameFragment : Fragment() {
+
     private lateinit var viewModel: GameViewModel
+
     private lateinit var binding: GameFragmentBinding
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -25,8 +28,6 @@ class GameFragment : Fragment() {
         binding.isItCorrectButton.setOnClickListener{
             viewModel.check(binding.numText.text.toString())
         }
-
-        
 
         return binding.root
     }
