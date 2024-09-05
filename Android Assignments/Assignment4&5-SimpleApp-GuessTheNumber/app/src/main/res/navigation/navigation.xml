@@ -22,5 +22,32 @@
         android:id="@+id/gameFragment"
         android:name="com.example.guessthenumber.screens.game.GameFragment"
         android:label="game_fragment"
-        tools:layout="@layout/game_fragment" />
+        tools:layout="@layout/game_fragment" >
+        <action
+            android:id="@+id/action_gameFragment_to_finishFragment"
+            app:destination="@id/finishFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/titleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/finishFragment"
+        android:name="com.example.guessthenumber.screens.finish.FinishFragment"
+        android:label="FinishFragment" >
+        <action
+            android:id="@+id/action_finishFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+        <action
+            android:id="@+id/action_finishFragment_to_gameFragment2"
+            app:destination="@id/gameFragment"
+            app:popUpTo="@id/titleFragment" />
+        <argument
+            android:name="simple_text"
+            app:argType="string" />
+        <argument
+            android:name="answer"
+            app:argType="integer" />
+    </fragment>
 </navigation>

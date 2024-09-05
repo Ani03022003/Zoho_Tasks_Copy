@@ -3,10 +3,10 @@
     <string name="title">Guess the number!!</string>
     <string name="hint">Choose a number from 1 to 20</string>
     <string name="button_text">Make Guess</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="guess_text">Enter Your Guess</string>
-    <string name="hint_in_game">Make the guess</string>
+    <string name="hint_in_game">%s</string>
     <string name="guess_left">Guess Left: %d</string>
     <string name="in_game_button_text">Is It Correct</string>
+    <string name="ans_text">Answer is: %d</string>
 </resources>

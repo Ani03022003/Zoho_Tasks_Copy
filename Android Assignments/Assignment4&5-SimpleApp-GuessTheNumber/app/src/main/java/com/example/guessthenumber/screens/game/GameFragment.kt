@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.example.guessthenumber.R
 import com.example.guessthenumber.databinding.GameFragmentBinding
 
@@ -25,9 +27,27 @@ class GameFragment : Fragment() {
 
         viewModel = ViewModelProvider(this)[GameViewModel::class.java]
 
+        binding.gameViewModel = viewModel
+
+        binding.lifecycleOwner = viewLifecycleOwner
+
         binding.isItCorrectButton.setOnClickListener{
             viewModel.check(binding.numText.text.toString())
         }
+
+        viewModel.correctGuess.observe(viewLifecycleOwner, Observer { correct ->
+            if(correct){
+                findNavController().navigate(GameFragmentDirections.actionGameFragmentToFinishFragment(viewModel.wonString, viewModel.randomNumber))
+                viewModel.onCorrectGuess()
+            }
+        })
+
+        viewModel.over.observe(viewLifecycleOwner, Observer { hasFinished ->
+            if(hasFinished){
+                findNavController().navigate(GameFragmentDirections.actionGameFragmentToFinishFragment(viewModel.loseString, viewModel.randomNumber))
+                viewModel.onOver()
+            }
+        })
 
         return binding.root
     }

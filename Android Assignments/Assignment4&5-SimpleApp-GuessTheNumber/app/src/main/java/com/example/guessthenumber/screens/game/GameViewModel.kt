@@ -2,6 +2,8 @@ package com.example.guessthenumber.screens.game
 
 import android.os.CountDownTimer
 import android.text.format.DateUtils
+import android.util.Log
+import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -16,10 +18,13 @@ class GameViewModel : ViewModel() {
     companion object{
         private const val DONE = 0L
         private const val ONE_SEC = 1000L
-        private const val COUNTDOWN_TIME = 60000L
+        private const val COUNTDOWN_TIME = 10000L
     }
 
-    private val randomNumber : Int = Random.nextInt(1, MAX_VALUE)
+    val wonString = "You Won"
+    val loseString = "You lost"
+
+    val randomNumber : Int = Random.nextInt(1, MAX_VALUE)
 
     private var _correctGuess = MutableLiveData<Boolean>()
     val correctGuess : LiveData<Boolean>
@@ -46,9 +51,10 @@ class GameViewModel : ViewModel() {
     private val timer : CountDownTimer
 
     init{
-        _noOfGuess.value = 3
+        _noOfGuess.value = 5
         _correctGuess.value = false
         _over.value = false
+        _hint.value = "Make your guess"
         timer = object : CountDownTimer(COUNTDOWN_TIME, ONE_SEC) {
             override fun onTick(p0: Long) {
                 _currentTime.value = (p0 / ONE_SEC)
@@ -69,7 +75,7 @@ class GameViewModel : ViewModel() {
     }
 
     fun check(num : String){
-        if(_noOfGuess.value!! <= 0){
+        if(_noOfGuess.value!! <= 1){
             Over()
         }
         else if(num.toInt() == randomNumber){
@@ -78,10 +84,12 @@ class GameViewModel : ViewModel() {
         else if(abs(num.toInt()-randomNumber) <= 3){
             _hint.value = "You are near!!!"
             _noOfGuess.value = (_noOfGuess.value)?.minus(1)
+            Log.i("GameViewModel","In check - You are near")
         }
         else {
             _hint.value = "Guessing is far"
             _noOfGuess.value = (_noOfGuess.value)?.minus(1)
+            Log.i("GameViewModel","In check - Guessing is Far")
         }
     }
 
