@@ -24,6 +24,7 @@ import kotlin.concurrent.Volatile
 
 @Database(entities = [SleepNight::class], version = 1)
 abstract class SleepDatabase : RoomDatabase() {
+
     abstract val sleepDatabaseDao : SleepDatabaseDao
 
     companion object{
