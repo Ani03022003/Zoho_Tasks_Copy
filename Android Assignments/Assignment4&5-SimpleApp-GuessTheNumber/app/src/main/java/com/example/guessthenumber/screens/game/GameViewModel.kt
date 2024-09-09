@@ -21,6 +21,7 @@ class GameViewModel : ViewModel() {
         private const val COUNTDOWN_TIME = 10000L
     }
 
+
     val wonString = "You Won"
     val loseString = "You lost"
 

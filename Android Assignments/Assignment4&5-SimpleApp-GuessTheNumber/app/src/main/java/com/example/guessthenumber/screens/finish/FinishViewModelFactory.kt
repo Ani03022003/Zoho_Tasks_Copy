@@ -2,6 +2,7 @@ package com.example.guessthenumber.screens.finish
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.example.guessthenumber.screens.game.GameViewModel
 
 class FinishViewModelFactory(private val text : String, private  val ans : Int) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
