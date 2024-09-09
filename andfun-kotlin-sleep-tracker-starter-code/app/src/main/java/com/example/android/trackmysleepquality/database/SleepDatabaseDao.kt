@@ -16,4 +16,31 @@
 
 package com.example.android.trackmysleepquality.database
 
-interface SleepDatabaseDao
+import androidx.lifecycle.LiveData
+import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.Query
+import androidx.room.Update
+
+@Dao
+interface SleepDatabaseDao{
+
+    @Insert
+    fun insert(data : SleepNight)
+
+    @Update
+    fun update(data : SleepNight)
+
+    @Query("SELECT * from sleep_night_table WHERE night_id = :key")
+    fun get(key : Long) : SleepNight?
+
+    @Query("DELETE from sleep_night_table")
+    fun clean()
+
+    @Query("SELECT * from sleep_night_table ORDER BY night_id DESC")
+    fun getAll() : LiveData<List<SleepNight>> // Since it is livedata when thr value is fetched one time
+                                                // The modification on that table will be automatically known to the view
+
+    @Query("SELECT * from sleep_night_table ORDER BY night_id DESC LIMIT 1")
+    fun getCurrent() : SleepNight?
+}
