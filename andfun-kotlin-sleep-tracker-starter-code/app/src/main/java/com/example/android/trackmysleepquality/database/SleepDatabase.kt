@@ -22,7 +22,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import kotlin.concurrent.Volatile
 
-@Database(entities = [SleepNight::class], version = 1)
+@Database(entities = [SleepNight::class], version = 2)
 abstract class SleepDatabase : RoomDatabase() {
 
     abstract val sleepDatabaseDao : SleepDatabaseDao

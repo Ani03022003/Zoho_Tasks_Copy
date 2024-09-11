@@ -17,12 +17,18 @@
 package com.example.android.trackmysleepquality.sleepquality
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.OptIn
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.example.android.trackmysleepquality.R
+import com.example.android.trackmysleepquality.database.SleepDatabase
 import com.example.android.trackmysleepquality.databinding.FragmentSleepQualityBinding
 
 /**
@@ -38,6 +44,7 @@ class SleepQualityFragment : Fragment() {
      *
      * This function uses DataBindingUtil to inflate R.layout.fragment_sleep_quality.
      */
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
 
@@ -45,7 +52,28 @@ class SleepQualityFragment : Fragment() {
         val binding: FragmentSleepQualityBinding = DataBindingUtil.inflate(
                 inflater, R.layout.fragment_sleep_quality, container, false)
 
+        Log.i("Sleep Quality Fragment", "In Sleep Quality Fragment")
+
+        val args = SleepQualityFragmentArgs.fromBundle(requireArguments())
+
         val application = requireNotNull(this.activity).application
+
+        val database = SleepDatabase.getInstance(application).sleepDatabaseDao
+
+        val viewModelFactory = SleepQualityViewModelFactory(args.sleepNightKey, database)
+
+        val viewModel = ViewModelProvider(this, viewModelFactory)[SleepQualityViewModel::class.java]
+
+        binding.sleepQualityViewModel = viewModel
+
+        binding.lifecycleOwner = viewLifecycleOwner
+
+        viewModel.navigateToSleepTracker.observe(viewLifecycleOwner, Observer {
+            rated -> if(rated) {
+                findNavController().navigate(SleepQualityFragmentDirections.actionSleepQualityFragmentToSleepTrackerFragment())
+                viewModel.doneNavigating()
+            }
+        })
 
         return binding.root
     }
