@@ -18,7 +18,7 @@ class InfoViewModel(
     val database : InformationDao,
     application: Application ) : ViewModel() {
 
-    private var currentData = MutableLiveData<Information?>()
+    //private var currentData = MutableLiveData<Information?>()
 
     var zsId = MutableLiveData<String>()
 
@@ -44,6 +44,11 @@ class InfoViewModel(
 
     init{
         Log.i("InfoViewModel", "${name.value} , ${zsId.value} , ${phoneNo.value} , ${email.value} , ${dob.value}")
+        name.value = ""
+        zsId.value = ""
+        phoneNo.value = ""
+        email.value = ""
+        dob.value = ""
     }
 
     fun onSave(){
@@ -96,5 +101,13 @@ class InfoViewModel(
     override fun onCleared() {
         super.onCleared()
         uiScope.cancel()
+    }
+
+    fun clearText(){
+        zsId.value = ""
+        name.value = ""
+        phoneNo.value = ""
+        email.value = ""
+        dob.value = ""
     }
 }

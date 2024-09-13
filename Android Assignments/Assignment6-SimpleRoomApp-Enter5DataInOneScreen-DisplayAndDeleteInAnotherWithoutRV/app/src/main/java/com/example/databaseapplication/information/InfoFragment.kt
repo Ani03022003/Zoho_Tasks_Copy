@@ -61,4 +61,9 @@ class InfoFragment : Fragment() {
 
         return binding.root
     }
+
+    override fun onStop() {
+        super.onStop()
+        viewModel.clearText()
+    }
 }

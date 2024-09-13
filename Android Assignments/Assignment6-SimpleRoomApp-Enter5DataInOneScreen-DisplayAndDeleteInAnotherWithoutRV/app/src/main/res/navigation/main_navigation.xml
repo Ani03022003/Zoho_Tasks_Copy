@@ -8,8 +8,8 @@
     <fragment
         android:id="@+id/infoFragment"
         android:name="com.example.databaseapplication.information.InfoFragment"
-        android:label="fragment_info"
-        tools:layout="@layout/fragment_info" >
+        android:label="Enter Information"
+        tools:layout="@layout/fragment_info">
         <action
             android:id="@+id/action_infoFragment_to_displayFragment2"
             app:destination="@id/displayFragment2" />
@@ -17,8 +17,8 @@
     <fragment
         android:id="@+id/displayFragment2"
         android:name="com.example.databaseapplication.display.DisplayFragment"
-        android:label="fragment_display"
-        tools:layout="@layout/fragment_display" >
+        android:label="Display Details"
+        tools:layout="@layout/fragment_display">
         <action
             android:id="@+id/action_displayFragment2_to_infoFragment"
             app:destination="@id/infoFragment" />
