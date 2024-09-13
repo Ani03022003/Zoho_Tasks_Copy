@@ -76,7 +76,10 @@ class GameViewModel : ViewModel() {
     }
 
     fun check(num : String){
-        if(_noOfGuess.value!! <= 1){
+        if(_noOfGuess.value == null){
+
+        }
+        else if(_noOfGuess.value!! <= 1){
             Over()
         }
         else if(num.toInt() == randomNumber){

@@ -1,6 +1,7 @@
 package com.example.databaseapplication
 
 import android.os.Bundle
+import android.text.format.Time
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -13,11 +14,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.databaseapplication.ui.theme.DatabaseApplicationTheme
+import java.time.format.DateTimeFormatter
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
+
     }
 }

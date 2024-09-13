@@ -2,14 +2,15 @@ package com.example.databaseapplication.database
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
+import androidx.room.Index
 import androidx.room.PrimaryKey
 import org.jetbrains.annotations.NotNull
 import java.util.Date
 
-@Entity(tableName = "information_table")
+@Entity(tableName = "information_table", indices = [Index(value = ["zoho_schools_id", "email_id"], unique = true)])
 data class Information (
 
-    @PrimaryKey @ColumnInfo(name = "zoho_schools_id")
+    @ColumnInfo(name = "zoho_schools_id")
     var zsId : String = "",
 
     @ColumnInfo(name = "phone_number")
@@ -22,5 +23,9 @@ data class Information (
     var email : String = "",
 
     @ColumnInfo(name = "date_of_birth")
-    var dob : Long = 0L
+    var dob : String = "",
+
+    @PrimaryKey(autoGenerate = true) @ColumnInfo(name = "serial_no")
+    var sno : Int = 0
+
 )
