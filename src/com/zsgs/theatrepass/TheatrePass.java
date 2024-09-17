@@ -6,7 +6,7 @@ public class TheatrePass { //Application Class : Starting point of an applicatio
 	
 	private String appName = "Theatre Pass Application";
 
-	private String appVersion = "0.0.2";
+	private String appVersion = "0.0.3";
 	
 	public static void main(String arg[]) {
 		System.out.println();

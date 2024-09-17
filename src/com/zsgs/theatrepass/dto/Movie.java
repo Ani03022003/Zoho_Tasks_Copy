@@ -3,10 +3,12 @@ package com.zsgs.theatrepass.dto;
 import java.util.List;
 
 public class Movie {
+	private int movieId;
 	private String movieName;
 	private String movieReleaseDate;
 	private String movieDescription;
 	private String movieDirector;
+	private String sensorCertifiedAs;
 	private List<String> movieActors;
 	private boolean isReleased;// is this key needed?
 
@@ -56,5 +58,13 @@ public class Movie {
 
 	public void setReleased(boolean isReleased) {
 		this.isReleased = isReleased;
+	}
+
+	public int getMovieId() {
+		return movieId;
+	}
+
+	public void setMovieId(int movieId) {
+		this.movieId = movieId;
 	}
 }

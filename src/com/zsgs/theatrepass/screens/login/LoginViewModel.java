@@ -1,5 +1,8 @@
 package com.zsgs.theatrepass.screens.login;
 
+import com.zsgs.theatrepass.datalayer.TheatrePassRepository;
+import com.zsgs.theatrepass.dto.User;
+
 class LoginViewModel {
 
 	private LoginScreen view;
@@ -8,13 +11,10 @@ class LoginViewModel {
 		view = screen;
 	}
 
-	private String userName = "ZSGS";
-
-	private String userPassword = "admin";
-
 	public void validateUser(String userName, String password) {
-		if (this.userName.equals(userName) && this.userPassword.equals(password)) {
-			view.navigateMovieList();
+		User loggedInUser = TheatrePassRepository.getInstance().validate(userName,password);
+		if (loggedInUser!=null) {
+			view.navigateMovieList(loggedInUser);
 		} else {
 			view.showErroMessage("Invalid User name or Password");
 		}

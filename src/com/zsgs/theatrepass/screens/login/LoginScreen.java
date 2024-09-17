@@ -3,6 +3,7 @@ package com.zsgs.theatrepass.screens.login;
 import java.util.Scanner;
 
 import com.zsgs.theatrepass.BaseScreen;
+import com.zsgs.theatrepass.dto.User;
 import com.zsgs.theatrepass.screens.movielist.MovieListScreen;
 
 public class LoginScreen extends BaseScreen {
@@ -29,7 +30,8 @@ public class LoginScreen extends BaseScreen {
 		}
 	}
 
-	public void navigateMovieList() {
+	public void navigateMovieList(User loggedInUser) {
+		System.out.println("Welcome "+loggedInUser.getName());
 		MovieListScreen movieListScreen = new MovieListScreen();
 		movieListScreen.onCreate();
 	}
