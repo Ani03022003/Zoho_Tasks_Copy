@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".display.DisplayFragment">
+
+    <data>
+        <variable
+            name="displayViewModel"
+            type="com.example.displaycolors.display.DisplayViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/color1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@{displayViewModel.colors[0]}"
+            app:layout_constraintBottom_toTopOf="@+id/color2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            style="@style/Text_Style" />
+
+        <TextView
+            android:id="@+id/color3"
+            style="@style/Text_Style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{displayViewModel.colors[1]}"
+            app:layout_constraintBottom_toTopOf="@+id/color4"
+            app:layout_constraintEnd_toEndOf="@+id/color2"
+            app:layout_constraintStart_toStartOf="@+id/color2"
+            app:layout_constraintTop_toBottomOf="@+id/color2" />
+
+        <TextView
+            android:id="@+id/color4"
+            style="@style/Text_Style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{displayViewModel.colors[2]}"
+            app:layout_constraintBottom_toTopOf="@+id/color5"
+            app:layout_constraintEnd_toEndOf="@+id/color3"
+            app:layout_constraintStart_toStartOf="@+id/color3"
+            app:layout_constraintTop_toBottomOf="@+id/color3" />
+
+        <TextView
+            android:id="@+id/color5"
+            style="@style/Text_Style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{displayViewModel.colors[3]}"
+            app:layout_constraintBottom_toTopOf="@+id/color6"
+            app:layout_constraintEnd_toEndOf="@+id/color4"
+            app:layout_constraintStart_toStartOf="@+id/color4"
+            app:layout_constraintTop_toBottomOf="@+id/color4" />
+
+        <TextView
+            android:id="@+id/color6"
+            style="@style/Text_Style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{displayViewModel.colors[4]}"
+            app:layout_constraintBottom_toTopOf="@+id/color7"
+            app:layout_constraintEnd_toEndOf="@+id/color5"
+            app:layout_constraintStart_toStartOf="@+id/color5"
+            app:layout_constraintTop_toBottomOf="@+id/color5" />
+
+        <TextView
+            android:id="@+id/color7"
+            style="@style/Text_Style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{displayViewModel.colors[5]}"
+            app:layout_constraintBottom_toTopOf="@+id/next_Button"
+            app:layout_constraintEnd_toEndOf="@+id/color6"
+            app:layout_constraintStart_toStartOf="@+id/color6"
+            app:layout_constraintTop_toBottomOf="@+id/color6" />
+
+        <TextView
+            android:id="@+id/color2"
+            style="@style/Text_Style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{displayViewModel.colors[6]}"
+            app:layout_constraintBottom_toTopOf="@+id/color3"
+            app:layout_constraintEnd_toEndOf="@+id/color1"
+            app:layout_constraintStart_toStartOf="@+id/color1"
+            app:layout_constraintTop_toBottomOf="@+id/color1" />
+
+        <Button
+            android:id="@+id/next_Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:text="Next"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/color7"
+            app:layout_constraintStart_toStartOf="@+id/color7"
+            android:onClick="@{() -> displayViewModel.onClickNext()}"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
