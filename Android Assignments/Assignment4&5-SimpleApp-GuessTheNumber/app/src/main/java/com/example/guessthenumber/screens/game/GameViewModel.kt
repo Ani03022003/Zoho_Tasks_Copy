@@ -43,6 +43,14 @@ class GameViewModel : ViewModel() {
     val over : LiveData<Boolean>
         get() = _over
 
+    private var _nonNull = MutableLiveData<Boolean>()
+    val nonNull : LiveData<Boolean>
+        get() = _nonNull
+
+    private var _reset = MutableLiveData<Boolean>()
+    val reset : LiveData<Boolean>
+        get() = _reset
+
     private var _currentTime = MutableLiveData<Long>()
     val currentTime : LiveData<String>
         get() = _currentTime.map{
@@ -76,8 +84,8 @@ class GameViewModel : ViewModel() {
     }
 
     fun check(num : String){
-        if(_noOfGuess.value == null){
-
+        if(num.isEmpty()){
+            _nonNull.value = true
         }
         else if(_noOfGuess.value!! <= 1){
             Over()
@@ -88,11 +96,13 @@ class GameViewModel : ViewModel() {
         else if(abs(num.toInt()-randomNumber) <= 3){
             _hint.value = "You are near!!!"
             _noOfGuess.value = (_noOfGuess.value)?.minus(1)
+            _reset.value = true
             Log.i("GameViewModel","In check - You are near")
         }
         else {
             _hint.value = "Guessing is far"
             _noOfGuess.value = (_noOfGuess.value)?.minus(1)
+            _reset.value = true
             Log.i("GameViewModel","In check - Guessing is Far")
         }
     }
@@ -107,5 +117,13 @@ class GameViewModel : ViewModel() {
 
     fun onCorrectGuess(){
         _correctGuess.value = false
+    }
+
+    fun onFinishNonNull(){
+        _nonNull.value = false
+    }
+
+    fun onFinishReset(){
+        _reset.value = false
     }
 }

@@ -44,11 +44,6 @@ class InfoViewModel(
 
     init{
         Log.i("InfoViewModel", "${name.value} , ${zsId.value} , ${phoneNo.value} , ${email.value} , ${dob.value}")
-        name.value = ""
-        zsId.value = ""
-        phoneNo.value = ""
-        email.value = ""
-        dob.value = ""
     }
 
     fun onSave(){
