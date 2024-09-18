@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.example.displaycolors.R
@@ -30,6 +31,13 @@ class RecycleViewFragment : Fragment() {
         val rvAdapter = RecycleViewAdapter(args.colors)
 
         binding.scrollView.adapter = rvAdapter
+
+        rvAdapter.setOnItemClicker(object  : RecycleViewAdapter.onItemClickListerner {
+            override fun onItemClick(color: String) {
+                Toast.makeText(context, "The color you clicked is $color", Toast.LENGTH_LONG).show()
+            }
+
+        })
 
         Log.i("RVFragment", "$args")
 
