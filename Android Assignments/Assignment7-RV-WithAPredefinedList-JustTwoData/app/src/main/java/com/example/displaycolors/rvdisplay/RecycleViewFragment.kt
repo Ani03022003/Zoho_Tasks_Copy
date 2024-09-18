@@ -1,6 +1,7 @@
 package com.example.displaycolors.rvdisplay
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -27,6 +28,10 @@ class RecycleViewFragment : Fragment() {
         val args = RecycleViewFragmentArgs.fromBundle(requireArguments())
 
         val rvAdapter = RecycleViewAdapter(args.colors)
+
+        binding.scrollView.adapter = rvAdapter
+
+        Log.i("RVFragment", "$args")
 
         return binding.root
     }

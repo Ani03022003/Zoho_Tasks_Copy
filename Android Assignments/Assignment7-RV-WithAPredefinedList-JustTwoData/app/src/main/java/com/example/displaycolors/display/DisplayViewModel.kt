@@ -13,7 +13,12 @@ class DisplayViewModel : ViewModel() {
         "Orange",
         "Yellow",
         "Brown",
-        "Grey"
+        "Grey",
+        "Pink",
+        "Black",
+        "Violet",
+        "White",
+        "Indigo"
     )
 
     private var _onNextFragment = MutableLiveData<Boolean>()
