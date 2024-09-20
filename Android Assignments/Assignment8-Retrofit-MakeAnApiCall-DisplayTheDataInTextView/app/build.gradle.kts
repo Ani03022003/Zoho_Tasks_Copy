@@ -3,6 +3,8 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.safeargs)
     alias(libs.plugins.compose.compiler)
+    id("kotlin-parcelize")
+    id("kotlin-kapt")
 }
 
 android {
@@ -71,17 +73,17 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
-    implementation("androidx.constraintlayout:constraintlayout:2.2.0-beta01")
-    implementation("androidx.navigation:navigation-fragment:2.8.0")
-    implementation("androidx.navigation:navigation-ui:2.8.0")
-    implementation("androidx.navigation:navigation-dynamic-features-fragment:2.8.0")
-    implementation("com.squareup.moshi:moshi:1.15.1")
-    implementation("com.squareup.moshi:moshi-kotlin:1.15.1")
-    implementation("com.squareup.retrofit2:converter-moshi:2.9.0")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.1")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1")
-    implementation("com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:1.8.1")
-    implementation("com.github.bumptech.glide:glide:4.16.0")
-    implementation("com.squareup.retrofit2:retrofit:2.11.0")
+    implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.navigation.fragment)
+    implementation(libs.androidx.navigation.ui)
+    implementation(libs.androidx.navigation.dynamic.features.fragment)
+    implementation(libs.moshi)
+    implementation(libs.moshi.kotlin)
+    implementation(libs.converter.moshi)
+    implementation(libs.kotlinx.coroutines.core)
+    implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.glide)
+    implementation(libs.retrofit)
+    implementation(libs.retrofit2.kotlin.coroutines.adapter)
 
 }
