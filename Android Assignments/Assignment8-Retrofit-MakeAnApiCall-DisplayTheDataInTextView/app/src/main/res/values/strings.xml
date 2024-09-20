@@ -3,6 +3,17 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="anime_info">
-        Artist: %1$s\n\n Name: %2$s\n\n SourceUrl: %3$s\n\n URL: %4$s
+        {\n
+            "artist": "%1$s",\n
+            "name": "%2$s",\n
+            "source_url": "%3$s",\n
+            "url": "%4$s"\n
+        }
+    </string>
+    <string name="Name">
+        Artist Name: %s
+    </string>
+    <string name="Href">
+        Artist Page: %s
     </string>
 </resources>

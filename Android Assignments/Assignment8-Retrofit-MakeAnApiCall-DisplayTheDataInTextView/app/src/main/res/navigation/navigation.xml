@@ -9,5 +9,23 @@
         android:id="@+id/jsonFragment"
         android:name="com.example.anime.textdisplay.JsonFragment"
         android:label="fragment_json"
-        tools:layout="@layout/fragment_json" />
+        tools:layout="@layout/fragment_json" >
+        <action
+            android:id="@+id/action_jsonFragment_to_imageFragment"
+            app:destination="@id/imageFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/imageFragment"
+        android:name="com.example.anime.imagedisplay.ImageFragment"
+        android:label="fragment_image"
+        tools:layout="@layout/fragment_image" >
+        <argument
+            android:name="animePic"
+            app:argType="com.example.anime.network.AnimeProperty"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_imageFragment_to_jsonFragment"
+            app:destination="@id/jsonFragment" />
+    </fragment>
 </navigation>

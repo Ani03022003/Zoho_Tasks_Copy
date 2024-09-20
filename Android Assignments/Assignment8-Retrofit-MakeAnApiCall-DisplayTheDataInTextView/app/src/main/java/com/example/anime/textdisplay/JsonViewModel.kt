@@ -16,7 +16,9 @@ import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
 
 enum class ApiStatus {
+    START,
     LOADING,
+    FINISH,
     ERROR,
     DONE
 }
@@ -34,14 +36,23 @@ class JsonViewModel(
     val anime : LiveData<AnimeProperty>
         get() = _anime
 
+    private var _displayText = MutableLiveData<LiveData<String>>()
+    val displayText : LiveData<LiveData<String>>
+        get() = _displayText
+
+
+
     fun generateList(){
         uiScope.launch {
             val animeListDeferred =  AnimeApi.retrofitService.getProperties(20)
             try {
                 _status.value = ApiStatus.LOADING
                 val animeList = animeListDeferred.await()
-                _status.value = ApiStatus.DONE
+                _status.value = ApiStatus.FINISH
                 _anime.value = animeList.results.random()
+                _displayText.value = _anime.map {
+                    application.applicationContext.getString(R.string.anime_info, it.artistHref, it.artistName, it.sourceUrl, it.url)
+                }
             }
             catch(e : Exception){
                 _status.value = ApiStatus.ERROR
@@ -49,8 +60,21 @@ class JsonViewModel(
         }
     }
 
-    var displayText = _anime.map {
-        application.applicationContext.getString(R.string.anime_info, it.artistHref, it.artistName, it.sourceUrl, it.url)
+    fun navigateToFragment(){
+        if(_status.value == ApiStatus.START){
+            _status.value = ApiStatus.ERROR
+        }
+        else{
+            _status.value = ApiStatus.DONE
+        }
+    }
+
+    fun doneNavigating() {
+        _status.value = ApiStatus.START
+    }
+
+    fun clearJson() {
+        _displayText = MutableLiveData<LiveData<String>>()
     }
 
     override fun onCleared() {

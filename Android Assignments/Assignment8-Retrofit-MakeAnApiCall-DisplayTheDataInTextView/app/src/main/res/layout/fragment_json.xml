@@ -84,7 +84,7 @@
             android:id="@+id/border"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="150dp"
+            android:layout_marginBottom="100dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
@@ -94,13 +94,13 @@
             android:id="@+id/gen_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="24dp"
+            android:onClick="@{() -> viewModel.generateList()}"
             android:text="Generate"
             app:layout_constraintEnd_toStartOf="@+id/Parse"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/scroll_view"
-            android:onClick="@{() -> viewModel.generateList()}"/>
+            app:layout_constraintTop_toBottomOf="@+id/scroll_view" />
 
         <Button
             android:id="@+id/Parse"
@@ -110,7 +110,8 @@
             app:layout_constraintBaseline_toBaselineOf="@+id/gen_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/gen_button" />
+            app:layout_constraintStart_toEndOf="@+id/gen_button"
+            android:onClick="@{() -> viewModel.navigateToFragment()}"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
