@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">HarryPotter</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="get_requests">
+        <item>Books</item>
+        <item>Characters</item>
+        <item>Houses</item>
+        <item>Spells</item>
+    </string-array>
+</resources>
