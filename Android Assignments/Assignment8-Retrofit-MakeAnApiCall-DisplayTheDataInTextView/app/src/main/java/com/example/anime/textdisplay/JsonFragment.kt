@@ -54,11 +54,7 @@ class JsonFragment : Fragment() {
                     dialog.show()
                 }
 
-                ApiStatus.START -> Toast.makeText(context,"Starting!",Toast.LENGTH_SHORT).show()
-
-                ApiStatus.LOADING -> Toast.makeText(context, "Loading", Toast.LENGTH_SHORT).show()
-
-                ApiStatus.FINISH -> Toast.makeText(context, "Loading Finished", Toast.LENGTH_SHORT).show()
+                else -> Toast.makeText(context, "$it" ,Toast.LENGTH_SHORT).show()
             }
         })
 
@@ -68,6 +64,6 @@ class JsonFragment : Fragment() {
     override fun onStop() {
         super.onStop()
         viewModel.doneNavigating()
-        viewModel.clearJson()
+        //viewModel.clearJson()
     }
 }

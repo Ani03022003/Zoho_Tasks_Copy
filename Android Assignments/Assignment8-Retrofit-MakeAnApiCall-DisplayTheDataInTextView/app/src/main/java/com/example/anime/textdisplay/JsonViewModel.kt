@@ -36,8 +36,8 @@ class JsonViewModel(
     val anime : LiveData<AnimeProperty>
         get() = _anime
 
-    private var _displayText = MutableLiveData<LiveData<String>>()
-    val displayText : LiveData<LiveData<String>>
+    private var _displayText = MutableLiveData<LiveData<String>?>()
+    val displayText : LiveData<LiveData<String>?>
         get() = _displayText
 
 
@@ -61,20 +61,21 @@ class JsonViewModel(
     }
 
     fun navigateToFragment(){
-        if(_status.value == ApiStatus.START){
-            _status.value = ApiStatus.ERROR
-        }
-        else{
+        if(_status.value == ApiStatus.FINISH){
             _status.value = ApiStatus.DONE
         }
+        else{
+            _status.value = ApiStatus.ERROR
+        }
     }
+
+//    fun doneNavigating() {
+//        _status.value = ApiStatus.START
+//    }
 
     fun doneNavigating() {
+        _displayText.value = null
         _status.value = ApiStatus.START
-    }
-
-    fun clearJson() {
-        _displayText = MutableLiveData<LiveData<String>>()
     }
 
     override fun onCleared() {
