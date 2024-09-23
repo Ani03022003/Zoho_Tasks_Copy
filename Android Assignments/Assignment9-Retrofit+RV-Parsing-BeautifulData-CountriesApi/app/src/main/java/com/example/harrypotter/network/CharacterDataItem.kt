@@ -8,10 +8,10 @@ import kotlinx.parcelize.Parcelize
 data class CharacterDataItem(
     val birthdate: String,
     val children: List<String>,
-    @Json(name = "fullName")val name: String,
+    @Json(name = "fullName") override val name: String,
     val hogwartsHouse: String,
-    @Json(name = "image")val imgUrl: String,
-    @Json(name = "index")val id: Int,
+    @Json(name = "image") override val imgUrl: String,
+    @Json(name = "index") override val id: Int,
     val interpretedBy: String,
     val nickname: String
-) : Parcelable
+) : Parcelable, DataItem(imgUrl, id, name)

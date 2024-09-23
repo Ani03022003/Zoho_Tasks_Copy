@@ -34,7 +34,7 @@ class ChooseFragment : Fragment() {
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 requestItem = parent?.getItemAtPosition(position).toString()
-                Toast.makeText(context, "Selected item $requestItem", Toast.LENGTH_LONG).show()
+                //Toast.makeText(context, "Selected item $requestItem", Toast.LENGTH_LONG).show()
             }
             override fun onNothingSelected(parent: AdapterView<*>?) {
             }

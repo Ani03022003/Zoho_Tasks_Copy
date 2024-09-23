@@ -22,7 +22,7 @@ val retrofit: Retrofit = Retrofit.Builder()
     .build()
 
 interface AnimeApiService {
-    @GET("v2/waifu")
+    @GET("v2/kitsune")
     fun getProperties(@Query("filter") amount:Int) : Deferred<AnimeResponse>
 }
 
