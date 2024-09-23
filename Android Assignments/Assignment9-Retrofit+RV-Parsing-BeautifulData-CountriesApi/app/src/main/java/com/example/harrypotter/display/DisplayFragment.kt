@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import com.example.harrypotter.R
 class DisplayFragment : Fragment() {
+    private lateinit var bin
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -15,7 +16,7 @@ class DisplayFragment : Fragment() {
         // Inflate the layout for this fragment
         val args = DisplayFragmentArgs.fromBundle(requireArguments()).request
 
-        Toast.makeText(context, args, Toast.LENGTH_LONG).show()
+//        Toast.makeText(context, args, Toast.LENGTH_LONG).show()
 
         return inflater.inflate(R.layout.fragment_display, container, false)
     }
