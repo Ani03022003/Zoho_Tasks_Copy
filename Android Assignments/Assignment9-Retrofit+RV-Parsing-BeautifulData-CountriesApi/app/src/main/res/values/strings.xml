@@ -4,7 +4,5 @@
     <string-array name="get_requests">
         <item>Books</item>
         <item>Characters</item>
-        <item>Houses</item>
-        <item>Spells</item>
     </string-array>
 </resources>

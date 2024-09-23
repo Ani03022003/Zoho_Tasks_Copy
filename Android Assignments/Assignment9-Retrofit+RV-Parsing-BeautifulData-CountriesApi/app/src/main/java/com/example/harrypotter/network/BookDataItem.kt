@@ -7,12 +7,12 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class BookDataItem(
-    @Json(name = "cover")val imgUrl: String,
+    @Json(name = "cover") override val imgUrl: String,
     val description: String,
-    @Json(name = "index")val id: Int,
+    @Json(name = "index") override val id: Int,
     val number: Int,
-    @Json(name = "originalTitle")val name: String,
+    @Json(name = "originalTitle") override val name: String,
     val pages: Int,
     val releaseDate: String,
     val title: String
-) : Parcelable
+) : Parcelable, DataItem(imgUrl, id, name)

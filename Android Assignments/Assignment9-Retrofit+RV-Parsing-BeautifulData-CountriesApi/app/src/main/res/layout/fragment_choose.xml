@@ -21,7 +21,7 @@
             android:layout_marginTop="32dp"
             android:layout_marginBottom="32dp"
             android:text="Choose the GET request you want"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             app:layout_constraintBottom_toTopOf="@+id/request_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
