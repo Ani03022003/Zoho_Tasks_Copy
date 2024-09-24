@@ -46,8 +46,8 @@ android {
     namespace = "com.example.android.devbyteviewer"
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_21
-        targetCompatibility = JavaVersion.VERSION_21
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
 }
@@ -96,6 +96,7 @@ dependencies {
 
     // Room database
     implementation "androidx.room:room-runtime:$version_room"
+    implementation 'com.google.android.gms:play-services-nearby:19.3.0'
     kapt "androidx.room:room-compiler:$version_room"
 
     // Kotlin Extensions and Coroutines support for Room
