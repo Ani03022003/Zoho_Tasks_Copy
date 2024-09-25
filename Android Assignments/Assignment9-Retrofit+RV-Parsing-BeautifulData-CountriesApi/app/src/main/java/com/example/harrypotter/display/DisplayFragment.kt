@@ -25,17 +25,6 @@ class DisplayFragment : Fragment() {
     ): View? {
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_display, container, false)
 
-        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { view, insets ->
-            val systemInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-
-            // Adjust the padding/margin based on the insets
-            view.setPadding(0, systemInsets.top, 0, systemInsets.bottom)
-
-            // Return the insets without consuming them
-            insets
-        }
-
-
         val application = requireNotNull(activity).application
 
         val args = DisplayFragmentArgs.fromBundle(requireArguments()).request.lowercase(Locale.ROOT)
