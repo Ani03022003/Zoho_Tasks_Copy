@@ -6,8 +6,9 @@ import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import kotlinx.coroutines.Deferred
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
+import retrofit2.http.GET
 
-private const val BASE_URL = "https://dog.ceo/api/breeds/image/random"
+private const val BASE_URL = "https://dog.ceo/api/"
 
 private val moshi = Moshi.Builder()
     .add(KotlinJsonAdapterFactory())
@@ -20,6 +21,7 @@ private val retrofit = Retrofit.Builder()
     .build()
 
 interface ApiService {
+    @GET("breeds/image/random")
     fun getPics() : Deferred<Dog>
 }
 

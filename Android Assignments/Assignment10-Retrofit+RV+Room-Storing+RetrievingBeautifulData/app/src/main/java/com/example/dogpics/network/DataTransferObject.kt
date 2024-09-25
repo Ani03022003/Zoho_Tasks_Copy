@@ -12,6 +12,6 @@ fun Dog.asDomainModel() : DogDomain {
     return DogDomain(message = this.message, status = this.status)
 }
 
-fun Dog.asDatabaseModel() : Array<DogEntity> {
-    return arrayOf(DogEntity(message = this.message, status = this.status))
+fun Dog.asDatabaseModel() : DogEntity {
+    return DogEntity(message = this.message, status = this.status)
 }
