@@ -127,4 +127,7 @@ dependencies {
 
     //Webview
     implementation(libs.androidx.webkit)
+
+    //Location Services
+    implementation(libs.play.services.location)
 }

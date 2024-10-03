@@ -20,6 +20,7 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.newsfeed.R
 import com.example.newsfeed.adapter.DisplayAdapter
 import com.example.newsfeed.databinding.FragmentNewsListBinding
+import com.example.newsfeed.domain.News
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -73,30 +74,30 @@ class NewsListFragment : Fragment() {
 
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
-                viewModel.filteredList(query)
-                println(query)
+                filteredList(query)
                 handleKeyboard(searchView)
                 return true
             }
             override fun onQueryTextChange(newText: String?): Boolean {
-                viewModel.filteredList(newText)
-                println(newText)
+                filteredList(newText)
                 return true
             }
         })
 
         viewModel.news.observe(viewLifecycleOwner, Observer {
-            newsAdapter.data = it
+            it.let {
+                newsAdapter.submitList(it)
+            }
             handleKeyboard(searchView)
         })
 
 
-        viewModel.dataNull.observe(viewLifecycleOwner, Observer {
-            if(it){
-                Toast.makeText(context, "No matching results found", Toast.LENGTH_SHORT).show()
-                viewModel.toastFinished()
-            }
-        })
+//        viewModel.dataNull.observe(viewLifecycleOwner, Observer {
+//            if(it){
+//                Toast.makeText(context, "No matching results found", Toast.LENGTH_SHORT).show()
+//                viewModel.toastFinished()
+//            }
+//        })
 
         return binding.root
     }
@@ -110,5 +111,25 @@ class NewsListFragment : Fragment() {
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         outState.putString("queryString", searchView.query.toString())
+    }
+
+    fun filteredList(newText: String?) {
+        println(newText)
+        val filteredNews : MutableList<News> = viewModel.news.value?.filter { new ->
+            newText?.let {
+                new.author.equals(it, ignoreCase = true) ||
+                        new.name.equals(it, ignoreCase = true) ||
+                        new.title.equals(it, ignoreCase = true) ||
+                        new.content?.contains(it.toRegex()) == true ||
+                        new.description?.contains(it.toRegex()) == true
+            } ?: false
+        }.orEmpty().toMutableList()
+
+        if (filteredNews.isEmpty()) {
+            Toast.makeText(context, "No matching results found", Toast.LENGTH_SHORT).show()
+            newsAdapter.submitList(viewModel.news.value?.toMutableList())
+        } else {
+            newsAdapter.submitList(filteredNews)
+        }
     }
 }

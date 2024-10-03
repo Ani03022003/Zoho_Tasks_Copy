@@ -10,69 +10,6 @@
             type="com.example.newsfeed.newsDisplay.NewsListViewModel" />
     </data>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:fitsSystemWindows="true">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/my_toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/md_theme_primary"
-            android:elevation="4dp">
-
-            <TextView
-                android:id="@+id/app_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="4dp"
-                android:text="@string/news_feed"
-                android:textColor="#FFFFFF"
-                android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.5">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/temp_and_area"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:text="@string/_31_chennai"
-                android:textColor="#FFFDFD"
-                app:layout_constraintBottom_toTopOf="@+id/weather_description"
-                app:layout_constraintEnd_toStartOf="@+id/imageView"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/weather_description"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/cloudy"
-                android:textColor="#FFFFFF"
-                android:textSize="11sp"
-                app:layout_constraintEnd_toEndOf="@+id/temp_and_area"
-                app:layout_constraintStart_toStartOf="@+id/temp_and_area"
-                app:layout_constraintTop_toBottomOf="@+id/temp_and_area" />
-
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginEnd="16dp"
-                android:src="@drawable/icons8_partly_cloudy_day"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -126,6 +63,5 @@
 <!--                app:layout_constraintGuide_end="16dp"/>-->
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </LinearLayout>
 
 </layout>

@@ -7,5 +7,6 @@
     <string name="news_feed">News Feed</string>
     <string name="cloudy">Cloudy</string>
     <string name="_31_chennai">31° Chennai</string>
+<!--    <string name="weatherImage">https://openweathermap.org/img/wn/%s@2x.png</string>-->
 
 </resources>

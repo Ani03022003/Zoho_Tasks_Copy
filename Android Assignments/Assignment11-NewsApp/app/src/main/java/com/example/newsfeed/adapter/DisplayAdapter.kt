@@ -3,29 +3,30 @@ package com.example.newsfeed.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.newsfeed.databinding.ListContentBinding
 import com.example.newsfeed.domain.News
 
-class DisplayAdapter(private val newsClickListener: NewsClickListener) : RecyclerView.Adapter<DisplayAdapter.NewsViewHolder>() {
+class DisplayAdapter(private val newsClickListener: NewsClickListener) : ListAdapter<News, DisplayAdapter.NewsViewHolder>(NewsDiffUtil()) {
 
-    var data : List<News> = emptyList()
-        set(value){
-            field = value
-            println("Inside set")
-            notifyDataSetChanged()
+//    var data : List<News> = emptyList()
+//        set(value){
+//            field = value
+//            println("Inside set")
+//            notifyDataSetChanged()
+//        }
+
+    class NewsDiffUtil() : DiffUtil.ItemCallback<News>() {
+        override fun areItemsTheSame(oldItem: News, newItem: News): Boolean {
+            return oldItem.url ==  newItem.url
         }
 
-//    class NewsDiffUtil() : DiffUtil.ItemCallback<News>() {
-//        override fun areItemsTheSame(oldItem: News, newItem: News): Boolean {
-//            return oldItem.
-//        }
-//
-//        override fun areContentsTheSame(oldItem: News, newItem: News): Boolean {
-//            TODO("Not yet implemented")
-//        }
-//
-//    }
+        override fun areContentsTheSame(oldItem: News, newItem: News): Boolean {
+            return oldItem == newItem
+        }
+
+    }
 
     class NewsViewHolder(private val binding : ListContentBinding) : RecyclerView.ViewHolder(binding.root){
 
@@ -55,17 +56,17 @@ class DisplayAdapter(private val newsClickListener: NewsClickListener) : Recycle
         return NewsViewHolder.from(parent)
     }
 
-    override fun getItemCount(): Int = data.size
+//    override fun getItemCount(): Int = data.size
 
     override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
-        holder.bind(data[position], newsClickListener, position)
+        holder.bind(getItem(position), newsClickListener, position)
     }
 
-    fun setFilteredData(filteredNews: MutableList<News>) {
-        data = filteredNews
-        //println(data)
-        //notifyDataSetChanged()
-    }
+//    fun setFilteredData(filteredNews: MutableList<News>) {
+//        data = filteredNews
+//        //println(data)
+//        //notifyDataSetChanged()
+//    }
 
     class NewsClickListener(val clickListener: (webUrl : String?) -> Unit){
         fun onClick(news : News) = clickListener(news.url)

@@ -9,8 +9,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-private const val BASE_URL = "https://newsapi.org/"
-
+private const val BASE_URL = "https://api.openweathermap.org/"
 
 private val moshi = Moshi.Builder()
     .add(KotlinJsonAdapterFactory())
@@ -22,16 +21,17 @@ private val retrofit = Retrofit.Builder()
     .baseUrl(BASE_URL)
     .build()
 
-interface NewsApiService {
-    @GET("/v2/everything")
-    fun getNews(@Query("q") q : String = "horror",
-                @Query("from") from : String,
-                @Query("apiKey") apiKey :String = "f94118bbd66e4e6aa801dbb466a27943") : Deferred<NewsList>
+interface WeatherApiService {
+    @GET("/data/2.5/weather/")
+    fun getWeatherDetails(
+        @Query("lat") lat: Double,
+        @Query("lon") lon: Double,
+        @Query("appid") appid: String = "ba8ab8f1304a9547a82c6064c7398712"
+    ): Deferred<WeatherData>
 }
 
-object NewsApi {
-    val retrofitService : NewsApiService by lazy {
-        retrofit.create(NewsApiService::class.java)
+object WeatherApi {
+    val retrofitService : WeatherApiService by lazy {
+        retrofit.create(WeatherApiService::class.java)
     }
 }
-
