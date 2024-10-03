@@ -7,7 +7,9 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
+import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -20,6 +22,8 @@ import com.example.newsfeed.network.WeatherApi
 import com.example.newsfeed.network.WeatherData
 import com.example.newsfeed.repository.WeatherRepository
 import com.google.android.gms.location.LocationServices
+import com.google.android.gms.location.Priority
+import com.google.android.gms.tasks.CancellationTokenSource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -30,8 +34,8 @@ class MainActivity : AppCompatActivity() {
     private var PERMISSION_LOCATION = Manifest.permission.ACCESS_COARSE_LOCATION
     private var PERMISSION_REQ_CODE = 1903
     private lateinit var binding : ActivityMainBinding
-    private  var data : WeatherData? = null
-    private  var savedData: WeatherData? = null
+    private var data : WeatherData? = null
+    private val cancellationSource by lazy{ CancellationTokenSource() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,15 +44,6 @@ class MainActivity : AppCompatActivity() {
         requestPermissionRuntime()
         binding.enable.setOnClickListener{
             requestPermissionRuntime()
-        }
-
-        if (savedInstanceState != null) {
-            savedData = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-                savedInstanceState.getParcelable("weatherData", WeatherData::class.java)!!
-            } else {
-                @Suppress("DEPRECATION")
-                savedInstanceState.getParcelable("weatherData")!!
-            }
         }
     }
 
@@ -117,7 +112,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getUserLocation() {
-        //Toast.makeText(this, "Permission is granted", Toast.LENGTH_SHORT).show()
         val locationProviderClient = LocationServices.getFusedLocationProviderClient(this)
         if (ActivityCompat.checkSelfPermission(this, PERMISSION_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, arrayOf(PERMISSION_LOCATION), PERMISSION_REQ_CODE)
@@ -133,9 +127,20 @@ class MainActivity : AppCompatActivity() {
                 }
             }
             else{
-                println(savedData.toString())
-                data = savedData
-                binding.weatherData = data
+                locationProviderClient.getCurrentLocation(Priority.PRIORITY_HIGH_ACCURACY,cancellationSource.token)
+                    .addOnSuccessListener { currLocation ->
+                        if (currLocation != null) {
+                            Log.i("MainActivity", "Getting current location")
+                            val repo = WeatherRepository(currLocation)
+                            lifecycleScope.launch {
+                                data = repo.getWeather()
+                                binding.weatherData = data
+                            }
+                        }
+                        else {
+                            Toast.makeText(this, "Please enable location", Toast.LENGTH_SHORT).show()
+                        }
+                    }
             }
         }
     }
@@ -147,19 +152,4 @@ class MainActivity : AppCompatActivity() {
         binding.weatherDescription.visibility = View.VISIBLE
         binding.enable.visibility = View.GONE
     }
-
-//    override fun onResume() {
-//        super.onResume()
-//        println("onResume")
-//        requestPermissionRuntime()
-//    }
-
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-        if(data != null) {
-            println(data.toString())
-            outState.putParcelable("weatherData", data)
-        }
-    }
-
 }
