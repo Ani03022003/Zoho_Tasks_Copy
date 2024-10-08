@@ -7,6 +7,7 @@ import androidx.lifecycle.map
 import com.example.newsfeed.database.NewsDatabase
 import com.example.newsfeed.database.asDomainModel
 import com.example.newsfeed.network.NewsApi
+import com.example.newsfeed.network.NewsList
 import com.example.newsfeed.network.WeatherApi
 import com.example.newsfeed.network.WeatherData
 import com.example.newsfeed.network.asDatabaseModel
@@ -28,6 +29,7 @@ class NewsRepository(private val database: NewsDatabase) {
         withContext(Dispatchers.IO){
             val date = getDate()
             val updatedNews = NewsApi.retrofitService.getNews(from = date).await()
+            println(updatedNews.articles.size)
             database.newsDatabaseDao.insertAll(*updatedNews.asDatabaseModel())
         }
     }
