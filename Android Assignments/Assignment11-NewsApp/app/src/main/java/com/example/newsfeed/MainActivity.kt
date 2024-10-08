@@ -119,7 +119,7 @@ class MainActivity : AppCompatActivity() {
         }
         locationProviderClient.lastLocation.addOnSuccessListener { location ->
             if (location != null) {
-                println(location)
+                //println(location)
                 val repo = WeatherRepository(location)
                 lifecycleScope.launch {
                     data = repo.getWeather()
@@ -127,7 +127,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
             else{
-                locationProviderClient.getCurrentLocation(Priority.PRIORITY_HIGH_ACCURACY,cancellationSource.token)
+                locationProviderClient.getCurrentLocation(Priority.PRIORITY_BALANCED_POWER_ACCURACY,cancellationSource.token)
                     .addOnSuccessListener { currLocation ->
                         if (currLocation != null) {
                             Log.i("MainActivity", "Getting current location")
@@ -138,6 +138,7 @@ class MainActivity : AppCompatActivity() {
                             }
                         }
                         else {
+                            makeInvisible()
                             Toast.makeText(this, "Please enable location", Toast.LENGTH_SHORT).show()
                         }
                     }
@@ -146,10 +147,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun makeVisible() {
-        println("visible")
         binding.weatherIcon.visibility = View.VISIBLE
         binding.tempAndArea.visibility = View.VISIBLE
         binding.weatherDescription.visibility = View.VISIBLE
         binding.enable.visibility = View.GONE
+    }
+
+    private fun makeInvisible() {
+        binding.weatherIcon.visibility = View.GONE
+        binding.tempAndArea.visibility = View.GONE
+        binding.weatherDescription.visibility = View.GONE
+        binding.enable.visibility = View.VISIBLE
     }
 }

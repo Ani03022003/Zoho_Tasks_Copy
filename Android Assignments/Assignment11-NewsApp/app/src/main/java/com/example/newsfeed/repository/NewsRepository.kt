@@ -23,7 +23,7 @@ class NewsRepository(private val database: NewsDatabase) {
         it.asDomainModel()
     }
 
-    @RequiresApi(Build.VERSION_CODES.N)
+    //@RequiresApi(Build.VERSION_CODES.N)
     suspend fun getUpdatedNews(){
         withContext(Dispatchers.IO){
             val date = getDate()
@@ -32,7 +32,7 @@ class NewsRepository(private val database: NewsDatabase) {
         }
     }
 
-    @RequiresApi(Build.VERSION_CODES.N)
+    //@RequiresApi(Build.VERSION_CODES.N)
     private fun getDate(): String {
         val cal = GregorianCalendar()
         cal.add(Calendar.DATE,-1)

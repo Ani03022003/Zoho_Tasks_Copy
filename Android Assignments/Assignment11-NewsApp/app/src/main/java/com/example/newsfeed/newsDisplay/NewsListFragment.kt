@@ -46,6 +46,7 @@ class NewsListFragment : Fragment() {
         newsAdapter = DisplayAdapter(DisplayAdapter.NewsClickListener{
             url -> viewModel.onNewsClicked(url)
         })
+
         binding.recyclerView.adapter = newsAdapter
 
         val application = requireNotNull(this.activity).application
